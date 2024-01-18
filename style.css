@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("kepek/v3.jpg");
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    gap: 10px;
+    color: #506a85;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "nav nav"
+    "aside article"
+    "footer footer";
+    background-color: #cfc6b5;
+    width: 60%;
+    margin: auto;
+    padding-bottom: 15px;
+    border: solid #506a85;
+}
+footer {
+    grid-area: footer;
+    background-color: #506a85;
+    color: #dad5ca;
+    text-align: center;
+}
+
+aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    grid-area: aside;
+}
+
+img {
+    width: 150px;
+}
+nav {
+    grid-area: nav;
+}
+article {
+    grid-area: article;
+    text-align: center;
+    padding-right: 10px;
+}
+article p {
+    color: #506a85;
+}
+article h1 {
+    color: #456280;
+}
+
+
+/* MOBIL NÉZET - RESZPONZIVITÁS KIALAKÍTÁSA */
+@media only screen and (max-width: 1000px) { /* töréspont */
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nav"
+        "aside"
+        "article"
+        "footer";
+    }
+  }
+
+/* MOBIL NÉZET - RESZPONZIVITÁS KIALAKÍTÁSA */
+@media only screen and (max-width: 550px) { /* töréspont */
+    body, main {
+      /* background-color: lightblue; */
+      width: 100%;
+    }
+    main {
+        grid-template-areas: 
+        "nav"
+        "aside"
+        "article"
+        "footer";
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    article {
+        grid-area: article;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+  }
